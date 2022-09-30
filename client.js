@@ -29,6 +29,18 @@ class Client{
 			contentType: "application/json",
 			complete: function(response, data){
 				if (response.status == 201) {
+					$("tbody").html("");//Para vaciar la tabla
+					for(let index = 0;index < data.items.length;index++){
+						//templates string - plantilla
+						$("tbody").append(`<tr>
+							<td>${data.items[index].id}</td>
+							<td>${data.items[index].id}</td>
+							<td>${data.items[index].id}</td>
+							<td>${data.items[index].id}</td>
+						</tr>`
+
+						);	
+					}
 					
 					alert("Client was added successfully");
 				}else{
