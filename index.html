@@ -4,15 +4,20 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="client.js"></script>
 	<title>ADD CLIENT</title>
 </head>
-<body>
-	<h1>ADD CLIENT</h1>
+<body onload= "client.findAll()">
 	<form>
-		<div>
-		<table>
+		<h1>ADD CLIENT</h1>
+		
 			<ul>
+
+				<li>
+					<label for="id">Id</label>
+					<input id="id" type="number" name="">
+				</li>
 				<li>
 					<label for="name">Name</label>
 					<input id="name" type="text" name="">
@@ -26,11 +31,16 @@
 					<input id="age" min="1" type="number" name="">
 				</li>
 				<li>
-					<button type="submit">Save</button>
+					<button onclick="client.insert()" type="button">Save</button>
+				</li>
+				<li>
+					<button onclick="client.update()" type="button">Update</button>
+				</li>
+				<li>
+					<button onclick="client.deleteById()" type="button">Delete</button>
 				</li>
 			</ul>
-		</table>
-	</div>
+		
 	</form>
 	<table>
 		<thead>
