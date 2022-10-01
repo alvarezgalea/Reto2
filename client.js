@@ -2,20 +2,22 @@ const ApiUrl = "https://g285736289b516c-reto1.adb.eu-frankfurt-1.oraclecloudapps
 
 class client{
 	static insert(){
-		const Valor = {
-			id: $("#id").val(),
-			name: $("#name").val(),
-			email: $("#email").val(),
-			age: $("#age").val()
-		};
 
+		//var Valor = {id:document.getElementById("id").value, name:document.getElementById("name").value,email:"a.com",age:"25"};
+		const Valor = {
+			id:document.getElementById("id").value,
+			name:document.getElementById("name").value,
+			email:document.getElementById("email").value,
+			age:document.getElementById("age").value
+			};
+			
 		$.ajax({
 			type: "POST",
 			url: ApiUrl,
 			dataType:"json",
 			crossDomain: true,
-			data: JSON.stringify(Valor),
 			contentType: "application/json",
+			data: JSON.stringify(Valor),
 			complete: function(response){
 				if (response.status == 201) {
 					client.findAll();
@@ -60,17 +62,17 @@ class client{
 	}
 
 	static update(){//revisar
-		const actualizar = {id:$("#id").val(), name:"katy",email:"a.com",age:"25"}
+		const actualizar = {id:$("#id").val(), name:"isabella",email:"a.com",age:"25"}
 
 		$.ajax({
 			url: ApiUrl,
 			type: "PUT",
 			dataType:"json",
 			crossDomain: true,
-			data: JSON.stringify(actualizar),
 			contentType: "application/json",
+			data: JSON.stringify(actualizar),
 			complete: function(response){
-				if (response.status == 200) {
+				if (response.status == 201) {
 					client.findAll();
 					alert("Client was update successfully");
 				}else{
