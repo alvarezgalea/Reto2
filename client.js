@@ -6,7 +6,7 @@ class client{
 		//var Valor = {id:document.getElementById("id").value, name:document.getElementById("name").value,email:"a.com",age:"25"};
 		const Valor = {
 			id:document.getElementById("id").value,
-			name:document.getElementById("name").value,
+			name:document.getElem0entById("name").value,
 			email:document.getElementById("email").value,
 			age:document.getElementById("age").value
 			};

@@ -1,6 +1,28 @@
+
+
+h1{
+	color: darkblue;
+}
+
+h2{
+	color:  darkgreen;
+}
+
+
 body{
+	display: block;
+	/*flex-direction: row;*/
+
+}
+
+
+div{
+	border: black 1px solid;
 	display: flex;
 	flex-direction: row;
+	height: 80%;
+	padding: 5%;
+	border: 5%;
 }
 
 form[]
@@ -9,6 +31,7 @@ form>ul {
 	list-style: none;
 	padding: 0px;
 	width: 20%;
+
 }
 
 form{
@@ -37,9 +60,6 @@ button {
 	width: 100%;
 }
 
-div{
-	width: 80%;
-}
 
 table{
 	border-collapse: collapse;
