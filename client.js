@@ -4,10 +4,10 @@ class client{
 	static insert(){
 
 		//var Valor = {id:document.getElementById("id").value, name:document.getElementById("name").value,email:"a.com",age:"25"};
-		const Valor = {id:$("#id").val(),
-						name:$("#name").val(),
-						email:$("#email").val(),
-						age:$("#age").val()
+		const Valor = {id:$("#id_Client").val(),
+						name:$("#name_Client").val(),
+						email:$("#email_Client").val(),
+						age:$("#age_Client").val()
 						}
 			
 		$.ajax({
@@ -42,7 +42,7 @@ class client{
 				$("tbody").html("");//Para vaciar la tabla
 					for(let index = 0;index < data.items.length;index++){
 						//templates string - plantilla
-						$("tbody").append(`<tr>
+						$("tbody2").append(`<tr>
 							<td>${data.items[index].id}</td>
 							<td>${data.items[index].name}</td>
 							<td>${data.items[index].email}</td>
@@ -62,10 +62,10 @@ class client{
 
 	static update(){//revisar
 		//const actualizar = {id:$("#id").val(), name:"isabella",email:"a.com",age:"25"}
-		const actualizar = {id:$("#id").val(),
-							name:$("#name").val(),
-							email:$("#email").val(),
-							age:$("#age").val()
+		const actualizar = {id:$("#id_Client").val(),
+							name:$("#name_Client").val(),
+							email:$("#email_Client").val(),
+							age:$("#age_Client").val()
 						}
 
 		$.ajax({

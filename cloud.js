@@ -20,7 +20,7 @@ class cloud{
 			data: JSON.stringify(Valor),
 			complete: function(response){
 				if (response.status == 201) {
-					client.findAll();
+					cloud.findAll();
 					alert("Client was added successfully");
 				}else{
 					alert("Client was not added");
@@ -80,7 +80,7 @@ class cloud{
 			data: JSON.stringify(actualizar),
 			complete: function(response){
 				if (response.status == 201) {
-					client.findAll();
+					cloud.findAll();
 					alert("Client was update successfully");
 				}else{
 					alert("Client was not update");
