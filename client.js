@@ -7,8 +7,7 @@ class client{
 		const Valor = {id:$("#id_Client").val(),
 						name:$("#name_Client").val(),
 						email:$("#email_Client").val(),
-						age:$("#age_Client").val()
-						}
+						age:$("#age_Client").val()}
 			
 		$.ajax({
 			url: ApiUrl,
@@ -39,7 +38,7 @@ class client{
 			crossDomain: true,
 			contentType: "application/json",
 			success: function(data){
-				$("tbody").html("");//Para vaciar la tabla
+				$("tbody2").html("");//Para vaciar la tabla
 					for(let index = 0;index < data.items.length;index++){
 						//templates string - plantilla
 						$("tbody2").append(`<tr>
