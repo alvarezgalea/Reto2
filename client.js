@@ -62,7 +62,12 @@ class client{
 	}
 
 	static update(){//revisar
-		const actualizar = {id:$("#id").val(), name:"isabella",email:"a.com",age:"25"}
+		//const actualizar = {id:$("#id").val(), name:"isabella",email:"a.com",age:"25"}
+		const actualizar = {id:$("#id").val(),
+							name:$("#name").val(),
+							email:$("#email").val(),
+							age:$("#age").val()
+						}
 
 		$.ajax({
 			url: ApiUrl,
