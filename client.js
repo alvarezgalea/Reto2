@@ -5,11 +5,11 @@ class client{
 
 		//var Valor = {id:document.getElementById("id").value, name:document.getElementById("name").value,email:"a.com",age:"25"};
 		const Valor = {
-			id:document.getElementById("id").value,
-			name:document.getElementById("name").value,
-			email:document.getElementById("email").value,
-			age:document.getElementById("age").value
-			};
+						id:$("#id").val(),
+						name:$("#name").val(),
+						email:$("#email").val(),
+						age:$("#age").val()
+						}
 			
 		$.ajax({
 			type: "POST",
