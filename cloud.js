@@ -1,4 +1,4 @@
-const ApiUrl = "https://g285736289b516c-reto1.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/cloud/cloud";
+const ApiUrl_Cloud = "https://g285736289b516c-reto1.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/cloud/cloud";
 
 class cloud{
 	static insert(){
@@ -12,7 +12,7 @@ class cloud{
 						}
 			
 		$.ajax({
-			url: ApiUrl,
+			url: ApiUrl_Cloud,
 			type: "POST",
 			dataType:"json",
 			crossDomain: true,
@@ -35,7 +35,7 @@ class cloud{
 	static findAll(){
 		$.ajax({
 			type: "GET",
-			url: ApiUrl,
+			url: ApiUrl_Cloud,
 			dataType: "json",
 			crossDomain: true,
 			contentType: "application/json",
@@ -72,7 +72,7 @@ class cloud{
 							}
 
 		$.ajax({
-			url: ApiUrl,
+			url: ApiUrl_Cloud,
 			type: "PUT",
 			dataType:"json",
 			crossDomain: true,
@@ -92,7 +92,7 @@ class cloud{
 	static deleteById(){
 		const borrar = {id:$("#id_Cloud").val()}
 		$.ajax({
-			url: ApiUrl,
+			url: ApiUrl_Cloud,
 			type: "DELETE",
 			dataType:"json",
 			crossDomain: true,
