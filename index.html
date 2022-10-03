@@ -7,6 +7,7 @@
 		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="client.js"></script>
 		<script type="text/javascript" src="cloud.js"></script>
+		<script type="text/javascript" src="message.js"></script>
 		<title>ADD CLIENT</title>
 	</head>
 	
@@ -17,7 +18,7 @@
 	<!--- Sección Cliente  -->
 	<div>
 		<frame frameborder=1>
-			<form>
+			<form id="form_Cloud">
 				<h2>ADD CLOUD</h2>
 		
 				<ul>
@@ -32,15 +33,15 @@
 					</li>
 					<li>
 						<label for="model_Cloud">Model</label>
-						<input id="model_Cloud"type="number">
+						<input id="model_Cloud" type="number">
 					</li>
 					<li>
 						<label for="category_id_Cloud">Category Id</label>
 						<input id="category_id_Cloud" type="number">
 					</li>
 					<li>
-						<label for="name_Cloud">Category Id</label>
-						<input id="name_Cloud" min="1" type="text">
+						<label for="name_Cloud">Name</label>
+						<input id="name_Cloud" type="text">
 					</li>
 					<li>
 						<button onclick="cloud.findAll()" type="button">Actualizar</button>
@@ -57,7 +58,7 @@
 				</ul>
 			
 			</form>
-			<table>
+			<table id="table_Cloud">
 				<thead>
 					<tr>
 						<th>Id</th>
@@ -68,11 +69,11 @@
 
 					</tr>
 				</thead>
-				<tbody1>
+				<tbody id="tbody_Cloud">
 					<tr>
-						<td colspan="4">No Clouds</td>
+						<td>No Clouds</td>
 					</tr>
-				</tbody1>
+				</tbody>
 			</table>
 		</frame>
 	</div>
@@ -127,7 +128,7 @@
 						<th>Age</th>
 					</tr>
 				</thead>
-				<tbody2>
+				<tbody id="tbody_Client">
 					<tr>
 						<td colspan="4">No Clients</td>
 					</tr>
@@ -150,28 +151,20 @@
 						<input id="id_Message" type="number">
 					</li>
 					<li>
-						<label for="name_Message">Name</label>
-						<input id="name_Message" type="text">
+						<label for="messagetext">Message</label>
+						<input id="messagetext" type="text">
 					</li>
 					<li>
-						<label for="email_Message">Email</label>
-						<input id="email_Message"type="text">
+						<button onclick="message.findAll()" type="button">Actualizar</button>
 					</li>
 					<li>
-						<label for="age_Message">Age</label>
-						<input id="age_Message" min="1" type="number">
+						<button onclick="message.insert()" type="button">Save</button>
 					</li>
 					<li>
-						<button onclick="client.findAll()" type="button">Actualizar</button>
+						<button onclick="message.update()" type="button">Update</button>
 					</li>
 					<li>
-						<button onclick="client.insert()" type="button">Save</button>
-					</li>
-					<li>
-						<button onclick="client.update()" type="button">Update</button>
-					</li>
-					<li>
-						<button onclick="client.deleteById()" type="button">Delete</button>
+						<button onclick="message.deleteById()" type="button">Delete</button>
 					</li>
 				</ul>
 			
@@ -180,12 +173,10 @@
 				<thead>
 					<tr>
 						<th>Id</th>
-						<th>Name</th>
-						<th>Email</th>
-						<th>Age</th>
+						<th>Message</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody id="tbody_Message">
 					<tr>
 						<td colspan="4">No Clients</td>
 					</tr>

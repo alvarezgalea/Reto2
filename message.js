@@ -1,17 +1,14 @@
-const ApiUrl_Cloud = "https://g285736289b516c-reto1.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/cloud/cloud";
+const ApiUrl_Message = "https://g285736289b516c-reto1.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/message/message";
 
-class cloud{
+class message{
 	static insert(){
 
 		//var Valor = {id:document.getElementById("id").value, name:document.getElementById("name").value,email:"a.com",age:"25"};
-		const Valor = {id:$("#id_Cloud").val(),
-						brand:$("#brand_Cloud").val(),
-						model:$("#model_Cloud").val(),
-						category_id:$("#category_id_Cloud").val(),
-						name:$("#name_Cloud").val()}
+		const Valor = {id:$("#id_Message").val(),
+						messagetext:$("#messagetext").val()}
 			
 		$.ajax({
-			url: ApiUrl_Cloud,
+			url: ApiUrl_Message,
 			type: "POST",
 			dataType:"json",
 			crossDomain: true,
@@ -19,10 +16,10 @@ class cloud{
 			data: JSON.stringify(Valor),
 			complete: function(response){
 				if (response.status == 201) {
-					cloud.findAll();
-					alert("Client was added successfully");
+					message.findAll();
+					alert("Message was added successfully");
 				}else{
-					alert("Client was not added");
+					alert("Message was not added");
 					console.log(response);
 				}
 			}
@@ -34,25 +31,22 @@ class cloud{
 	static findAll(){
 		$.ajax({
 			type: "GET",
-			url: ApiUrl_Cloud,
+			url: ApiUrl_Message,
 			dataType: "json",
 			crossDomain: true,
 			contentType: "application/json",
 			success: function(data){
-				$("#tbody_Cloud").html("");//Para vaciar la tabla
+				$("#tbody_Message").html("");//Para vaciar la tabla
 					for(let index = 0;index < data.items.length;index++){
 						//templates string - plantilla
-						$("#tbody_Cloud").append(`<tr>
+						$("#tbody_Message").append(`<tr>
 							<td>${data.items[index].id}</td>
-							<td>${data.items[index].brand}</td>
-							<td>${data.items[index].model}</td>
-							<td>${data.items[index].category_id}</td>
-							<td>${data.items[index].name}</td>
+							<td>${data.items[index].messagetext}</td>
 						</tr>`);	
 					}
 			},
 			error: function(){		
-				alert("Client was not loaded");
+				alert("Message was not loaded");
 			}
 		});		
 	}
@@ -63,15 +57,12 @@ class cloud{
 
 	static update(){//revisar
 		//const actualizar = {id:$("#id").val(), name:"isabella",email:"a.com",age:"25"}
-		const actualizar = {id:$("#id_Cloud").val(),
-							brand:$("#brand_Cloud").val(),
-							model:$("#model_Cloud").val(),
-							category_id:$("#category_id_Cloud").val(),
-							name:$("#name_Cloud").val()
-							}
+		const actualizar = {id:$("#id_Message").val(),
+							name:$("#messagetext").val()
+						}
 
 		$.ajax({
-			url: ApiUrl_Cloud,
+			url: ApiUrl_Message,
 			type: "PUT",
 			dataType:"json",
 			crossDomain: true,
@@ -79,19 +70,19 @@ class cloud{
 			data: JSON.stringify(actualizar),
 			complete: function(response){
 				if (response.status == 201) {
-					cloud.findAll();
-					alert("Client was update successfully");
+					client.findAll();
+					alert("Message was update successfully");
 				}else{
-					alert("Client was not update");
+					alert("Message was not update");
 				}
 			}
 		});
 	}
 
 	static deleteById(){
-		const borrar = {id:$("#id_Cloud").val()}
+		const borrar = {id:$("#id_Message").val()}
 		$.ajax({
-			url: ApiUrl_Cloud,
+			url: ApiUrl_Message,
 			type: "DELETE",
 			dataType:"json",
 			crossDomain: true,
@@ -107,6 +98,5 @@ class cloud{
 		});
 		
 	}
-
 
 }

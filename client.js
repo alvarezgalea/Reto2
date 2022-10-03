@@ -38,10 +38,10 @@ class client{
 			crossDomain: true,
 			contentType: "application/json",
 			success: function(data){
-				$("tbody2").html("");//Para vaciar la tabla
+				$("#tbody_Client").html("");//Para vaciar la tabla
 					for(let index = 0;index < data.items.length;index++){
 						//templates string - plantilla
-						$("tbody2").append(`<tr>
+						$("#tbody_Client").append(`<tr>
 							<td>${data.items[index].id}</td>
 							<td>${data.items[index].name}</td>
 							<td>${data.items[index].email}</td>
@@ -86,7 +86,7 @@ class client{
 	}
 
 	static deleteById(){
-		const borrar = {id:$("#id").val()}
+		const borrar = {id:$("#id_Client").val()}
 		$.ajax({
 			url: ApiUrl,
 			type: "DELETE",
