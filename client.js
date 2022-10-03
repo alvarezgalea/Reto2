@@ -4,16 +4,15 @@ class client{
 	static insert(){
 
 		//var Valor = {id:document.getElementById("id").value, name:document.getElementById("name").value,email:"a.com",age:"25"};
-		const Valor = {
-						id:$("#id").val(),
+		const Valor = {id:$("#id").val(),
 						name:$("#name").val(),
 						email:$("#email").val(),
 						age:$("#age").val()
 						}
 			
 		$.ajax({
-			type: "POST",
 			url: ApiUrl,
+			type: "POST",
 			dataType:"json",
 			crossDomain: true,
 			contentType: "application/json",
